@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+C:\PSY\SpringFrameWork-workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-771816845.index
-865856567.index
-865856567.index
-4011811617.index
-1004741583.index
-3255181983.index

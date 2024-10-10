@@ -1,5 +1,0 @@
-package com.kosta.shop.service;
-
-public class ShopServiceImpl implements ShopService {
-
-}

@@ -43,11 +43,10 @@ public class MemberServiceImpl implements MemberService {
 		}
 		
 	}
-
 	@Override
 	public void modifyMyPage(Member member) throws Exception {
 		
-		// mypage.jsp에서 password value 가  userid로 되어있다. 즉 해당 유저가 아니면패스워드를 변경 할 수 없도록 하기 위함이다.
+		// mypage.jsp에서 password value 가  userid로 되어있다. 즉 해당 유저가 아니면패스워드를 변경 할 수 없도록 하기 위함이
 		if(member.getPasswd().equals(member.getUserid())) {
 			member.setPasswd(null);
 		}
