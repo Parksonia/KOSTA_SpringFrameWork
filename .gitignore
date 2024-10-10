@@ -15,7 +15,7 @@ local.properties
 .recommenders
 
 ###DB ###
-context-jdbc.xml
+config/context-jdbc.xml
 
 # External tool builders
 .externalToolBuilders/
