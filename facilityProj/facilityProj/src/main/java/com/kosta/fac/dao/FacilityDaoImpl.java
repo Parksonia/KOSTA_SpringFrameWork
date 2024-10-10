@@ -27,4 +27,10 @@ public class FacilityDaoImpl implements FacilityDao {
 		sqlsession.update("mapper.facility.updateFacility", facility);
 		
 	}
+
+	@Override
+	public Facility selectFacility(String id) throws Exception {
+		
+		return sqlsession.selectOne("mapper.facility.selectFacility",id);
+	}
 }

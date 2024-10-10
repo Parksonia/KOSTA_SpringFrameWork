@@ -9,4 +9,6 @@ public interface FacilityService {
 	List<Facility> selectFacilities() throws Exception;
 	
 	void modifyFacility(Facility facility) throws Exception;
+	
+	Facility getFaicility(String id) throws Exception;
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath }"/> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,14 +8,21 @@
 <title>LG사이언스파크</title>
 <link rel="stylesheet" href="<c:url value="/resources/css/update.css"/>">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="<c:url value="/resources/js/update.js"/>"></script>
+<%-- <script src="<c:url value="/resources/js/update.js"/>"></script> --%>
+<script type="text/javascript">
+$(function() {
+	$('#cancelBtn').click(function() {
+		location.href = '${contextPath}/list';
+	});
+});
+</script>
 
 </head>
 <body>
 <div class="signUp">
 	<h1>시설수정</h1>
 	<hr>
-	<form id="updateForm" action="<c:url value="/facility/update"/>" method="post">
+	<form id="updateForm" action="<c:url value="/update"/>" method="post">
 		<input type="hidden" name="id" value="${facility.id }"><!-- TODO value -->
 		<table>
 			<colgroup>

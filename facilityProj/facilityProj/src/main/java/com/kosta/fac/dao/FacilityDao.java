@@ -8,4 +8,5 @@ public interface FacilityDao {
 
 	List<Facility> selectFacilityList() throws Exception;
 	void updateFacility(Facility facility) throws Exception;
+	Facility selectFacility(String id) throws Exception;
 }

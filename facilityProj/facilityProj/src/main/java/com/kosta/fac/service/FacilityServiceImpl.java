@@ -27,4 +27,10 @@ public class FacilityServiceImpl implements FacilityService {
 		
 	}
 
+	@Override
+	public Facility getFaicility(String id) throws Exception {
+		
+		return facilitydao.selectFacility(id);
+	}
+
 }
