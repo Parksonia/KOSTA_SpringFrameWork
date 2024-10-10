@@ -1,0 +1,19 @@
+package com.kosta.shop.dao;
+
+import java.util.List;
+
+import com.kosta.shop.dto.Cart;
+import com.kosta.shop.dto.Goods;
+
+public interface ShopDao {
+
+	List<Goods> allGoodsList() throws Exception;
+	Goods oneGoodsList(String gCode) throws Exception;
+	Cart selectCart(Integer num) throws Exception;
+	void addCart(Cart cart) throws Exception;
+	List<Cart> allCartList(String userid) throws Exception;
+	void deleteMultipleCart (List<Integer>list)throws Exception;
+	void deleteCart(Integer num) throws Exception;
+	void updateGAmount(Map<String,Object>param) throws Exception;
+	
+}

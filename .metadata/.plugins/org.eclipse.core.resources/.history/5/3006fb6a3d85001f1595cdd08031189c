@@ -1,0 +1,43 @@
+package com.kosta.shop.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kosta.shop.dao.ShopDao;
+import com.kosta.shop.dto.Cart;
+import com.kosta.shop.dto.Goods;
+
+@Service
+public class ShopServiceImpl implements ShopService {
+
+	@Autowired
+	private ShopDao shopdao;
+	
+	@Override
+	public List<Goods> goodsLists() throws Exception {
+	
+		return shopdao.allGoodsList();
+	}
+
+	//하나 조회 할 때 List가 아니라 selectOne!!!!!!!!!
+	@Override
+	public Goods goodsDetail(String gCode) throws Exception {
+		
+		return shopdao.oneGoodsList(gCode);
+	}
+
+	@Override
+	public boolean addCartList(Cart cart) throws Exception {
+		
+		Cart scart = shopdao.selectCart(cart.getNum());
+		if(scart == null) {			
+			shopdao.addCart(cart);
+			return true;
+		}
+		 
+		return false;
+	}
+
+}

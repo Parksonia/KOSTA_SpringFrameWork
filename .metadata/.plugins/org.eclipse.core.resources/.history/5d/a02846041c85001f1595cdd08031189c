@@ -1,0 +1,6 @@
+package com.kosta.shop.dao;
+
+public interface ShopDao {
+
+	List<Goods> allGoodsList() throws Exception;
+}

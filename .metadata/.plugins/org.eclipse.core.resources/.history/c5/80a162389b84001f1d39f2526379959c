@@ -1,0 +1,12 @@
+package com.kosta.shop.service;
+
+import org.springframework.stereotype.Service;
+
+import com.kosta.shop.dto.Member;
+
+@Service
+public class MemberServiceImpl implements MemberService {
+
+	
+	
+}

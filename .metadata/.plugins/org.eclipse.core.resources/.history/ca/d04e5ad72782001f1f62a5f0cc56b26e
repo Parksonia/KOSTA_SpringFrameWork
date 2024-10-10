@@ -1,0 +1,15 @@
+package com.kosta.board.dto;
+
+
+
+public class Member {
+
+	
+	public Member() {}
+
+
+
+
+
+	
+}

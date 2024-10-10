@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- dtd설정 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	
+<mapper namespace="mapper.cart">
+	<select id="selectCart" parameterType="Integer" resultType="cart">
+		select * from cart where num = #{num}
+	</select>
+	
+	<insert id="insertAddCart" parameterType="cart" useGeneratedKeys="true" keyProperty="num">
+		insert into cart(userid,gCode,gName,gPrice,gSize,gColor,gAmount,gImage) 
+						values (#{userid},#{gCode},#{gName},#{gPrice},#{gSize},#{gColor},#{gAmount},#{gImage})
+	</insert>
+	
+	<select id="selectCartList" parameterType="String" resultType="cart">
+		select * from cart where userid = #{userid}
+	</select>
+	
+</mapper>	 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- dtd설정 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+
+<mapper namespace="mapper.heart">
+	
+	<select id="selectHeart" parameterType="Map" resultType="Integer"> <!-- dto없고 파라미터 여러개일 때 MAP 사용  -->
+	
+	 <![CDATA[
+	 	select * from heart where mem_id=#{mem_id} and board_num=#{board_num}
+	 
+	 ]]>
+	</select>
+
+	<insert id="insertHeart" parameterType="Map">
+	<![CDATA[
+	 	insert into heart(mem_id,board_num) values (#{mem_id},#{board_num})
+	 ]]>
+	
+	</insert>
+	
+	<delete id="deleteHeart" parameterType="Map">
+	<![CDATA[
+		delete from heart where board_num=#{board_num}
+	 ]]>
+	</delete>
+
+</mapper>	

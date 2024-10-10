@@ -1,0 +1,12 @@
+package com.kosta.shop.service;
+
+import java.util.List;
+
+import com.kosta.shop.dto.Goods;
+
+public interface ShopService {
+
+	List<Goods> goodsLists () throws Exception;
+	List<Goods> goodsDetail (String gCode) throws Exception;
+	
+}

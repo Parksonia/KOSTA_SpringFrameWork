@@ -1,0 +1,11 @@
+package com.kosta.shop.dto;
+
+public class Goods {
+
+	private String gCode;
+	private String gCategory;
+	private String gName;
+	private String gContent;
+	private Integer gPrice;
+	private String gImage;
+}

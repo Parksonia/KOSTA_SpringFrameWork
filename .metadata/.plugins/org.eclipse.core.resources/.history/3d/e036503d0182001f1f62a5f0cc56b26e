@@ -1,0 +1,45 @@
+package com.kosta.bank.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.kosta.bank.service.MemberService;
+
+
+
+@Controller
+public class MemberController {
+
+	@Autowired
+	private MemberService memberService;
+	
+	@RequestMapping(value="login")
+	public String login() {
+		return "login";
+	}
+	@RequestMapping(value="login",method = RequestMethod.POST)
+	public String login(@RequestParam("id")String id,@RequestParam("password")String password) {
+		
+		try {
+			Member member = memberService.login(id, password); 
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		
+		return "allaccountinfo";
+	}
+	
+	
+	@RequestMapping(value="join")
+	public String join() {
+		return "join";
+	}
+	
+	
+}

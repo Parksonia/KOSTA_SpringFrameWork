@@ -1,0 +1,6 @@
+package com.kosta.board.controller;
+
+public class Snippet {
+	<!-- memberDao의 경우 @Repository어노테이션으로 빈즈 등록...? -->
+}
+

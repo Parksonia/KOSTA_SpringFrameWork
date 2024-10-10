@@ -1,0 +1,5 @@
+package com.kosta.shop.dao;
+
+public class ShopDaoImpl implements ShopDao {
+
+}

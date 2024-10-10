@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- dtd설정 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="mapper.board">
+	<insert id="insertBoard" parameterType="board" useGeneratedKeys="true">
+		<![CDATA[
+			insert into board (subject,content,writer,filename,dfilename) values(#{subject},#{content},#{writer},#{filename},#{dfilename})
+		]]>
+	</insert>
+
+	<select id="selectBoard" parameterType="Integer" resultType="board">
+		<![CDATA[
+			select * from board where num=#{num}
+		]]>
+	</select>
+	
+	<update id="updateBoard" parameterType="board">
+	
+		update board
+		<set>
+			<if test="filename!=null">filename=#{filename}</if>
+			<if test="subject!=null">subject=#{subject}</if>
+			<if test="content!=null">content=#{content}</if>	
+		</set>
+		where num=#{num}
+	</update>	
+	<!-- 
+		<update id="updateBoard" parameterType="dto.Board">
+		<choose>
+			<when test="#{filename} == null">
+			<![CDATA[
+				update board set subject=#{subject},content=#{content} where num = #{num}
+			]]>
+			</when>
+			<otherwise>
+			<![CDATA[
+				update board set subject=#{subject},content=#{content},filename=#{filename} where num = #{num}
+			]]>
+			</otherwise>
+		</choose>
+		</update>
+-->
+
+	<select id="selectBoardList" parameterType="Integer" resultType="board" >
+		<![CDATA[
+			select * from board order by num desc limit #{row},10;	
+		]]>
+	</select>
+
+	<update id="updateViewCnt" parameterType="Integer">
+		<![CDATA[
+			update board set view_cnt=view_cnt+1 where num = #{num}
+		]]>
+	</update>
+	
+	<select id="selectBoardCount" resultType="Integer">
+			<![CDATA[
+			select count(*) from board;
+		]]>
+	</select>
+</mapper>

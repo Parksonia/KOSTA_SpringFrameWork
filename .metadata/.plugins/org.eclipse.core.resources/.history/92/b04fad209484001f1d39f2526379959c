@@ -1,0 +1,5 @@
+package com.kosta.shop.dto;
+
+public class OrderInfo {
+
+}

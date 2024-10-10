@@ -1,0 +1,15 @@
+package com.kosta.shop.dto;
+
+public class Cart {
+
+	private Integer num;
+	private String userid;
+	private String gCode;
+	private String gName;
+	private Integer gPrice;
+	private String gSize;
+	private String gColor;
+	private Integer gAmount;
+	private String gImage;
+
+}

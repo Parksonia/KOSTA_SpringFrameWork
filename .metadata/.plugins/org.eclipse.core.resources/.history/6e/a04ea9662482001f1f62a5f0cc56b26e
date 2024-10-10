@@ -1,0 +1,15 @@
+package com.kosta.board.dto;
+
+import java.sql.Date;
+
+public class Member {
+
+	
+	public Member() {}
+
+
+
+
+
+	
+}

@@ -1,0 +1,8 @@
+package com.kosta.shop.dao;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class ShopDaoImpl implements ShopDao {
+
+}

@@ -1,0 +1,37 @@
+package com.kosta.bank.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.kosta.bank.dto.Account;
+import com.kosta.bank.service.AccountService;
+
+@Controller
+public class AccountController {
+	
+	@Autowired
+	private AccountService accountService;
+	
+	//url mapping -> 받을 데이터가 없으면 parameter 추가 안하면 됨  
+	@RequestMapping(value="accountInfo", method=RequestMethod.GET)
+	public String accountInfo() {
+		return "accountinfoform";
+	}
+	//url mapping ->parameter가 있을 경우 해당 메서드에 파라미터로 넣어준다. 
+	@RequestMapping(value="accountInfo", method=RequestMethod.POST)
+	public String accountInfo(@RequestParam("id") String id, Model model) {
+		try {
+			Account acc = accountService.accountInfo(id);
+			model.addAttribute("acc", acc);
+			return "accountinfo";
+		} catch(Exception e) {
+			e.printStackTrace();
+			model.addAttribute("err", "계좌조회 오류");
+			return "err";
+		}
+	}
+}
