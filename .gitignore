@@ -2,7 +2,6 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,java,eclipse
 
 ### Eclipse ###
-
 .metadata
 bin/
 tmp/
@@ -14,6 +13,9 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+
+###DB ###
+context-jdbc.xml
 
 # External tool builders
 .externalToolBuilders/
