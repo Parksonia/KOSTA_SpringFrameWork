@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.facility">
+	
+	<select id="selectAllList" resultType="facility">
+		select fac_id as id,fac_type as type, fac_type_name as typeName,fac_nm as name,price as price,available_time as time,etc as etc
+		 from facility
+	</select>
+
+	<update id="updateFacility" parameterType="facility">
+		update facility set 
+				fac_nm = #{name},
+				price = #{price},
+				etc = #{etc}
+		where fac_id = #{id} 		
+	</update>
+
+</mapper>	

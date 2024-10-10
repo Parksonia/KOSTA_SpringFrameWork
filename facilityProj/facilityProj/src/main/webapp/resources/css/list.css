@@ -1,0 +1,84 @@
+.leftHalf {
+	float: left;
+	width: 50%;
+	text-align: left;
+}
+.rightHalf {
+	float: right;
+	width: 50%;
+	text-align: right;
+}
+a {
+	cursor: pointer;
+	color: #428bca;
+}
+hr {
+	clear: both;
+}
+.tableTop {
+	margin-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 300px;
+	text-align: center;
+	border-top: solid; border-top-color: rgb(21, 176, 227); border-bottom: solid; border-bottom-color: rgb(21, 176, 227);
+}
+.tableTop select, .tableTop input {
+	width: 150px;
+	height: 30px;
+}
+.facility {
+    margin-top: 20px;
+    overflow: hidden;
+    float: left;
+    width: 60%;
+}
+.reservation {
+    margin-top: 20px;
+    overflow: hidden;
+    float: right;
+    width: 35%;
+}
+table {
+	width: 100%;
+}
+button {
+	cursor: pointer;
+}
+.facility table {
+	margin-top: 20px;
+}
+th {
+	background-color: #f5f5f5;
+	padding: 5px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+td {
+	padding: 5px;
+	text-align: center;
+}
+.facility .facilityName {
+	cursor: pointer;
+	color: #428bca;
+}
+.reservationDetails {
+	margin-top: 20px;
+	height: 500px;
+}
+.reservationButtonDiv {
+	margin-top: 20px;
+	text-align: center;
+}
+.reservationButtonDiv button {
+	width: 150px;
+	height: 70px;
+	color: #fff;
+	font-size: 25px;
+	font-weight: bold;
+	background-color: rgb(30, 157, 251);
+	border: 0 solid transparent;
+}
+.blind {
+	display: none;
+}
